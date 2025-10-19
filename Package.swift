@@ -24,6 +24,10 @@ let package = Package(
     .trait(
       name: "SQLiteDataTagged",
       description: "Introduce SQLiteData conformances to the swift-tagged package."
+    ),
+    trait(
+        name: "SQLiteDataCasePaths",
+        description: "Introduce SQLiteData conformances to the swift-case-paths package."
     )
   ],
   dependencies: [
@@ -43,6 +47,7 @@ let package = Package(
       ]
     ),
     .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.10.0"),
+    .package(url: "https://github.com/pointfreeco/swift-case-paths", from: "1.7.2"),
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.5.0"),
   ],
   targets: [
@@ -60,6 +65,11 @@ let package = Package(
           name: "Tagged",
           package: "swift-tagged",
           condition: .when(traits: ["SQLiteDataTagged"])
+        ),
+        .product(
+            name: "CasePaths",
+            package: "swift-case-paths",
+            condition: .when(traits: ["SQLiteDataCasePaths"])
         ),
       ]
     ),
