@@ -38,7 +38,8 @@ let package = Package(
       url: "https://github.com/pointfreeco/swift-structured-queries",
       from: "0.24.0",
       traits: [
-        .trait(name: "StructuredQueriesTagged", condition: .when(traits: ["SQLiteDataTagged"]))
+        .trait(name: "StructuredQueriesTagged", condition: .when(traits: ["SQLiteDataTagged"])),
+        .trait(name: "StructuredQueriesCasePaths", condition: .when(traits: ["SQLiteDataCasePaths"]))
       ]
     ),
     .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.10.0"),
