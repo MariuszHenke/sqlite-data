@@ -25,10 +25,10 @@ let package = Package(
       name: "SQLiteDataTagged",
       description: "Introduce SQLiteData conformances to the swift-tagged package."
     ),
-    trait(
+    .trait(
         name: "SQLiteDataCasePaths",
         description: "Introduce SQLiteData conformances to the swift-case-paths package."
-    )
+    ),
   ],
   dependencies: [
     .package(url: "https://github.com/apple/swift-collections", from: "1.0.0"),
